@@ -1,0 +1,105 @@
+\input{./preamble.tex}
+
+\begin{document}
+
+\title{
+	\usefont{OT1}{bch}{b}{n}
+	\normalfont \normalsize \textsc{Instituto Tecnol\'ogico de Buenos Aires} \\ [25pt]
+	\horrule{2pt} \\[0.4cm]
+	\huge Trabajo Pr\'actico Nº 1\\ Configuraci\'on Darlington \\
+	\horrule{2pt} \\[0cm]
+\author{\\Grupo 2:\\\\Francois, Mat\'ias\\Maselli, Carlos\\ M\"uller, Malena\\ Trozzo, Nicol\'as\\ \\ \\ \\
+Profesores: \\\\ Alcocer, Fernando\\ Oreglia, Eduardo \\ \\ } 
+\text{Electr\'onica I - 2019}
+}
+\date{\today} 
+\pagenumbering{arabic}
+
+\maketitle
+\newpage
+
+\section{Introducci\'on}
+
+La configuraci\'on ''Darlington'', tambi\'en conocida como ''par Darlington'', consiste en dos transistores conectados como se observa en la figura \ref{darlington_ideal}, con el fin de obtener una mayor ganancia de corriente respecto a la obtenida al emplear un \'unico transistor. En este trabajo se analiza el comportamiento del circuito \ref{darlington_tp} para comprender la utilidad del par Darlington.
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.4]{../darlington_ideal.png} 
+	\caption{Configuraci\'on Darlington.}
+	\label{darlington_ideal}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.4]{../darlington_tp.png} \\
+	\caption{Circuito de estudio en este trabajo, implementando un par Darlington.}
+	\label{darlington_tp}
+\end{figure}
+
+%\begin{figure}[H]
+%	\centering
+%	\begin{tabular}{c c}
+%		\includegraphics[scale=0.3]{../darlington_ideal.png} &
+%		\includegraphics[scale=0.3]{../darlington_tp.png} \\
+%	\end{tabular}
+%	\caption{}
+%	\label{darlington_tp}
+%\end{figure}
+
+\section{An\'alisis te\'orico del circuito}
+
+	\subsection{Polarizaci\'on}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.4]{../polarizacion.png} \\
+			\caption{Circuito equivalente para el an\'alisis de polarizaci\'on.}
+			\label{polarizacion}
+		\end{figure}
+
+	\subsection{Modelo incremental}
+	
+		\begin{equation}
+			\begin{cases}
+			\widehat{r}_{aux} = \frac{V_T}{I_{cq}}\\
+			\widehat{g}_m = \frac{1}{r_{aux}}\\	
+			\widehat{h}_{ie} = (h_{fe} + 1) r_{aux}\\
+			\widehat{r}_{ce} = \frac{1}{h_{oe}} = \frac{V_A}{I_{cq}}
+			\end{cases}
+			\label{mod_inc_ecs}
+		\end{equation}
+	
+	Particularmente, para el transistor $Q1$ se emplean las ecuaciones \ref{mod_inc_ecs} con $I_{cq1}$ y $h_{fe1}$, mientras que para el transistor $Q2$ con $I_{cq2}$ y $h_{fe2}$. Se obtienen los siguientes valores:
+	
+	\todo{COMPLETAR TABLA de estimadores}
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{c c c}%
+			\bfseries Estimadores & Q1 & Q2 \\ \hline
+			$\widehat{g}_m$ &  & \\
+			$\widehat{h}_{ie}$ &  & \\
+			$\widehat{r}_{ce}$&  & \\
+			\hline
+		\end{tabular}
+		\caption{Estimadores correspondientes al modelo incremental, para los transistores Q1 y Q2.}
+		\label{avolf}
+	\end{table}
+	
+	\subsection{Circuito incremental}
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.4]{../circ_incremental.png} \\
+			\caption{Circuito equivalente para el an\'alisis del circuito incremental.}
+			\label{circ_incremental}
+		\end{figure}
+
+\section{Diseño del circuito}
+
+\section{Mediciones y resultados obtenidos}
+
+\section{Conclusi\'on}
+
+
+
+\end{document}
