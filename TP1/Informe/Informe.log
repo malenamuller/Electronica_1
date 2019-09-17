@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.29)  16 SEP 2019 03:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.29)  17 SEP 2019 04:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1445,85 +1445,88 @@ Package pdftex.def Info: ../polarizacion.png  used on input line 55.
 
 [2 <../darlington_ideal.png> <../darlington_tp.png>]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 62.
+(Font)              scaled to size 10.07397pt on input line 60.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 62.
+(Font)              scaled to size 7.63599pt on input line 60.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 62.
+(Font)              scaled to size 5.51999pt on input line 60.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 62.
+(Font)              scaled to size 10.07397pt on input line 60.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 62.
+(Font)              scaled to size 7.63599pt on input line 60.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 62.
+(Font)              scaled to size 5.51999pt on input line 60.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 74.
+ine 84.
 
-Overfull \hbox (8.09274pt too wide) in paragraph at lines 74--74
+Overfull \hbox (8.09274pt too wide) in paragraph at lines 100--100
 [][]\T1/futs/m/n/10.95 (-20) COMPLETAR 
  []
 
 
-Overfull \hbox (8.09274pt too wide) in paragraph at lines 74--74
+Overfull \hbox (8.09274pt too wide) in paragraph at lines 100--100
 [][]\T1/futs/m/n/10.95 (-20) COMPLETAR 
  []
 
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 78.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 104.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 <../circ_incremental.png, id=53, 1085.05376pt x 424.58624pt>
 File: ../circ_incremental.png Graphic file (type png)
 <use ../circ_incremental.png>
-Package pdftex.def Info: ../circ_incremental.png  used on input line 92.
+Package pdftex.def Info: ../circ_incremental.png  used on input line 118.
 (pdftex.def)             Requested size: 434.01381pt x 169.83148pt.
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.93 ...a el an\'alisis del circuito incremental.}
+l.119 ... el an\'alisis del circuito incremental.}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{figure.2}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.93 ...a el an\'alisis del circuito incremental.}
+l.119 ... el an\'alisis del circuito incremental.}
                                                    [3pdfTeX warning (ext4): des
 tination with the same identifier (name{figure.1}) has been already used, dupli
 cate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.96 
-      <../polarizacion.png>] [4 <../circ_incremental.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 105.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 105.
+l.122 
+       <../polarizacion.png>] [4 <../circ_incremental.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 131.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 131.
  (./Informe.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 105.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 105.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 131.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 131.
 Package rerunfilecheck Info: File `Informe.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 105.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 131.
  ) 
 Here is how much of TeX's memory you used:
- 23766 strings out of 494060
- 442852 string characters out of 6163035
- 653464 words of memory out of 5000000
- 26874 multiletter control sequences out of 15000+600000
- 114501 words of font info for 153 fonts, out of 8000000 for 9000
+ 23782 strings out of 494060
+ 443119 string characters out of 6163035
+ 660464 words of memory out of 5000000
+ 26883 multiletter control sequences out of 15000+600000
+ 114956 words of font info for 156 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 75i,11n,85p,9109b,973s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,11n,85p,9109b,977s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/lo
 cal/texlive/2019basic/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></u
 sr/local/texlive/2019basic/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb
 ></usr/local/texlive/2019basic/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb><
 /usr/local/texlive/2019basic/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></u
 sr/local/texlive/2019basic/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on Informe.pdf (4 pages, 129051 bytes).
+Output written on Informe.pdf (4 pages, 131791 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 500000)
+ 131 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
+ 22 named destinations out of 1000 (max. 500000)
  38081 words of extra memory for PDF output out of 42996 (max. 10000000)
 
