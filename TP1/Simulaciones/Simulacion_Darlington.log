@@ -1,12 +1,31 @@
 Circuit: * C:\Users\Carlos\Desktop\ITBA\3er año\1er cuatri\E1\Electronica_1\TP1\Simulaciones\Simulacion_Darlington.asc
 
-WARNING: Node NC_01 is floating.
-
-WARNING: Less than two connections to node NC_01.  This node is used by C2.
 Direct Newton iteration for .op point succeeded.
+Semiconductor Device Operating Points:
+                        --- Bipolar Transistors ---
+Name:       q3          q1
+Model:   bc337-40    bc337-40
+Ib:       4.98e-06    1.57e-07
+Ic:       2.14e-03    6.65e-05
+Vbe:      6.17e-01    5.29e-01
+Vbc:     -4.03e+00   -3.50e+00
+Vce:      4.65e+00    4.03e+00
+BetaDC:   4.29e+02    4.23e+02
+Gm:       8.29e-02    2.75e-03
+Rpi:      5.17e+03    1.55e+05
+Rx:       6.68e+01    6.99e+01
+Ro:       4.82e+04    1.46e+06
+Cbe:      1.24e-10    6.46e-11
+Cbc:      2.39e-12    2.51e-12
+Cjs:      0.00e+00    0.00e+00
+BetaAC:   4.28e+02    4.26e+02
+Cbx:      2.86e-12    3.00e-12
+Ft:       1.02e+08    6.24e+06
 
-Date: Mon Sep 23 23:18:00 2019
-Total elapsed time: 0.104 seconds.
+
+
+Date: Tue Sep 24 03:19:38 2019
+Total elapsed time: 0.096 seconds.
 
 tnom = 27
 temp = 27
@@ -16,8 +35,8 @@ traniter = 0
 tranpoints = 0
 accept = 0
 rejected = 0
-matrix size = 18
+matrix size = 15
 fillins = 2
 solver = Normal
-Matrix Compiler1:      69 opcodes
-Matrix Compiler2: 1.44 KB object code size
+Matrix Compiler1:      65 opcodes
+Matrix Compiler2: 1.27 KB object code size
