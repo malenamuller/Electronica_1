@@ -23,7 +23,7 @@ $V_{cc}$                                     & 15,00E+00                        
 $R_1$                                         & 100,00E+03                                    \\
 $R_2$                                         & 330,00E+03                                    \\
 $R_s$                                         & 10,00E+03                                     \\
-$R_4$                                         & 10,00E+03                                     \\
+$R_3$                                         & 10,00E+03                                     \\
 $R_E$                                         & 4,70E+03                                      \\
 $R_L$                                         & 1,00E+03                                   
 \end{tabular}
@@ -43,11 +43,11 @@ El equivalente de Thevenin entre la base del primer transistor y masa se obtiene
 
 Recorriendo la malla de entrada se tiene que:
 \begin{equation}
-		V_{th}-I_{B1}R_{th}-V_{BEon_{1}}-V_{BEon_{2}}-R_{e}(I_{E_{2}}+I_{R_{4}})=0 
+		V_{th}-I_{B1}R_{th}-V_{BEon_{1}}-V_{BEon_{2}}-R_{e}(I_{E_{2}}+I_{R_{3}})=0 
 \end{equation}
 Del nodo que conecta el emisor del primer transistor con la base del segundo, se relacionan las corrientes de los transistores:
 \begin{equation}
-		I_{B_{2}} = I_{E_{1}} - \frac{V_{BEon_{2}}}{R_{4}}
+		I_{B_{2}} = I_{E_{1}} - \frac{V_{BEon_{2}}}{R_{3}}
 \end{equation}
 Por último, de las ecuaciones de cada transistor, despreciando el efecto de las $I_{CB0}$ dado que se trabaja a temperatura ambiente, se verifica:
 
@@ -62,8 +62,8 @@ Resolviendo dichas ecuaciones se llega a las siguientes expresiones para las cor
 
 	\begin{equation}
 		\begin{cases}
-		I_{cq_{1}}=\frac{V_{th}-V_{BEon_{1}}-V_{BEon_{2}}\left(1-\frac{R_{e}\beta_{2}}{R_{4}}\right)}{\frac{R_{th}}{\beta_{1}}+R_{e}\beta_{2}}\\ \\
-		I_{cq_{2}}=V_{th}\frac{1}{\frac{R_{th}}{\beta_{1}\beta_{2}}+R_{e}\frac{\beta_{2}+1}{\beta_{2}}}-V_{BEon_{1}}\frac{1}{\frac{R_{th}}{\beta_{2}}+R_{e}\beta_{1}}-V_{BEon_{2}}\left(\frac{\beta_{2}}{R_{4}}+\frac{\left(1-\frac{R_{e}\beta_{2}}{R_{4}}\right)\cdot(\beta_{1}+1)}{\frac{R_{th}}{\beta_{2}}+R_{e}\beta_{1}} \right)
+		I_{cq_{1}}=\frac{V_{th}-V_{BEon_{1}}-V_{BEon_{2}}\left(1-\frac{R_{e}\beta_{2}}{R_{3}}\right)}{\frac{R_{th}}{\beta_{1}}+R_{e}\beta_{2}}\\ \\
+		I_{cq_{2}}=V_{th}\frac{1}{\frac{R_{th}}{\beta_{1}\beta_{2}}+R_{e}\frac{\beta_{2}+1}{\beta_{2}}}-V_{BEon_{1}}\frac{1}{\frac{R_{th}}{\beta_{2}}+R_{e}\beta_{1}}-V_{BEon_{2}}\left(\frac{\beta_{2}}{R_{3}}+\frac{\left(1-\frac{R_{e}\beta_{2}}{R_{3}}\right)\cdot(\beta_{1}+1)}{\frac{R_{th}}{\beta_{2}}+R_{e}\beta_{1}} \right)
 		\end{cases}
 	\end{equation}
 
@@ -71,8 +71,8 @@ Por último, se puede verificar que ambos transistores queden correctamente pola
 
 	\begin{equation}
 		\begin{cases}
-		V_{CEQ_{1}}=V_{CC}-V_{BEon_{2}}\left(1+\frac{R_{e}}{R_{4}}\right)-R_{e}I_{CQ_{2}}\\ \\
-		V_{CEQ_{2}}=V_{CC}-V_{BEon_{2}}\frac{R_{e}}{R_{4}}-R_{e}I_{CQ_{2}}
+		V_{CEQ_{1}}=V_{CC}-V_{BEon_{2}}\left(1+\frac{R_{e}}{R_{3}}\right)-R_{e}I_{CQ_{2}}\\ \\
+		V_{CEQ_{2}}=V_{CC}-V_{BEon_{2}}\frac{R_{e}}{R_{3}}-R_{e}I_{CQ_{2}}
 		\end{cases}
 	\end{equation}
 	
@@ -156,12 +156,12 @@ hie2            & 1,12$k\Omega$             \\
 \label{tabla_valores_incremental} 
 \end{table}
 
-Para poder resolver el circuito fácilmente, se agrupa en paralelo la resistencia $R_4$ con $hie2$. Para poder hacerlo, se debe también adaptar la fuente de corriente del segundo transistor por la que circula por el paralelo de las resistencias de la siguiente forma. Además, se agrupan en paralelo $R_e$ y $R_L$. Para éstas consideraciones se calculan los siguientes parámetros:
+Para poder resolver el circuito fácilmente, se agrupa en paralelo la resistencia $R_3$ con $hie2$. Para poder hacerlo, se debe también adaptar la fuente de corriente del segundo transistor por la que circula por el paralelo de las resistencias de la siguiente forma. Además, se agrupan en paralelo $R_e$ y $R_L$. Para éstas consideraciones se calculan los siguientes parámetros:
 
 	\begin{equation}
 		\begin{cases}
-		hfe_{2}^{*}=hfe_{2}\frac{R_{4}}{R_{4}+hie_{2}} \\
-		hie_{2}^{*}=hie_{2}//R_{4} \\
+		hfe_{2}^{*}=hfe_{2}\frac{R_{3}}{R_{3}+hie_{2}} \\
+		hie_{2}^{*}=hie_{2}//R_{3} \\
 		R_{d}=R_{e}//R_{2}
 		\end{cases}
 		\label{mod_inc_ecs}
