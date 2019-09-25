@@ -12,7 +12,23 @@ Para la implementación del circuito se buscó en las simulaciones tener una gan
 \subsection{Polarización}
 La comparación entre los valores de la polarización de los transistores se muestran en la Tabla\ref{tabla_polarizacion_comp}. Las diferencias en las $I_{CQ}$ se deben principalmente a las variaciones de $\beta$ con $I_{C}$, que fueron tenidas en consideración en los cálculos teóricos, pero de todas formas es distinto al real.
 
-\todo{Insertar tabla polarización}
+\todo{IAgregar columna Simulado}
+
+	\begin{table}[h!]
+	\centering
+	\begin{tabular}{c c c c}%
+		\bfseries &Te\'orico & Medido & Simulado \\ \hline \\
+		$V_{CEQ1} (V)$ & $4,01$ &$4,00$ & \\
+		$V_{CEQ2} (V)$ & $4,71$& $4,60$& \\
+		$I_{CQ1} (\mu A)$ & $93,54$&$66,00$ & \\
+		$I_{CQ2} (mA)$ &$2,30$ & $2,10$& \\
+		$V_{BE1} (mV)$ &$700,00$ &$520,00$ & \\
+		$V_{BE2} (mV)$ & $700,00$& $600,00$& \\
+		\hline
+	\end{tabular}
+	\caption{Comparaci\'on de valores de polarizaci\'on para los casos te\'orico, medido y simulado.}
+	\label{tabla_polarizacion_comp}
+\end{table}
 
 \subsection{Ganancias}
 En primer lugar, se midió la ganancia de tensión del sistema. En la Figura \ref{fig_bode_avs} se muestra la constrastación de la medición, la simulación y la teoría. Como ningún cálculo teórico tiene en cuenta variaciones con la frecuencia, se toma un único valor para todas las frecuencias, y se ve que la aproximación para frecuencias medias es válida en el intervalo de frecuencias entre 400$Hz$ y 500$kHz$, donde la ganancia empieza a caer. La ganancia en la banda pasante simulada es de 0.87 veces y la medida llega hasta 0.9 veces, con lo que el cálculo teórico de 0.866 veces resulta muy cercano a la realidad.
