@@ -4,7 +4,7 @@
 
 
 	\subsection{Polarizaci\'on}
-		En la Figura \ref{polarizacion} se muestra el modelo del circuito considerando que los capacitores representan circuitos abiertos, ya que en este caso se trabaja con tensión $V_{cc}$ continua. El mismo se esquematiza con el equivalente de Thevenin entre el nodo de base y masa.\\
+		En la Figura \ref{polarizacion} se muestra el modelo del circuito considerando que los capacitores representan circuitos abiertos, ya que en este caso se trabaja con tensión $V_{cc}$ continua. El mismo se esquematiza con el equivalente de Th\'evenin entre el nodo de base y masa.\\
 		\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.4]{./Imagenes/polarizacion.png} \\
@@ -12,7 +12,7 @@
 			\label{polarizacion}
 		\end{figure}
 
-Los valores utilizados para los cálculos son los de los componentes que utilizados en la implementación del circuito, que fueron elegidos en base a las simulaciones realizadas, con el fin de lograr un resultado óptimo. De esta forma, los valores de los componentes utilizados se listan en la Tabla \ref{tabla_valores}. Los transistores utilizados son BC337-40.
+Los valores utilizados para los cálculos son los de los componentes que usamos en la implementación del circuito, los cuales fueron elegidos en base a las simulaciones realizadas, con el fin de lograr un resultado óptimo. De esta forma, los valores de dichos componentes se listan en la Tabla \ref{tabla_valores}. Los transistores utilizados son BC337-40.
 
 \begin{table}[H]
 \centering
@@ -31,7 +31,7 @@ $R_L$                                         & $1k\Omega$
 \label{tabla_valores}  
 \end{table}
 
-El equivalente de Thevenin entre la base del primer transistor y masa se obtiene mediante:\\
+El equivalente de Th\'evenin entre la base del primer transistor y masa se obtiene mediante:\\
 
 	\begin{equation}
 		\begin{cases}
@@ -53,8 +53,8 @@ Por último, de las ecuaciones de cada transistor, despreciando el efecto de las
 
 	\begin{equation}
 		\begin{cases}
-		Q_{1}) \, \, I_{E_{1}} = I_{B_{1}}(\beta_{1}+1)\\ \\
-		Q_{2}) I_{E_{2}}=I_{B_{2}}(\beta_{2}+1)
+		Q_{1}: \, \, I_{E_{1}} = I_{B_{1}}(\beta_{1}+1)\\ \\
+		Q_{2}: \, \, I_{E_{2}}=I_{B_{2}}(\beta_{2}+1)
 		\end{cases}
 	\end{equation}
 
@@ -84,7 +84,7 @@ Para los cálculos se utiliza $V_{BEon}=0.7(V)$ para ambos transistores. Con res
 		 H_{FE2} = 90
 		\end{cases}
 	\end{equation*}
-Reemplazando además por los valores de los componentes utilizados, se hallan los valores de $I_{cq_{1}}$, $I_{cq_{2}}$, $V_{CEQ_{1}}$ y $V_{CEQ_{2}}$, detallados en la Tabla \ref{tabla_valores_polarizacion}.
+Reemplazando además por los valores de los componentes utilizados, se hallan los valores de $I_{CQ1}$, $I_{CQ2}$, $V_{CEQ1}$ y $V_{CEQ2}$, detallados en la Tabla \ref{tabla_valores_polarizacion}.
 
 \begin{table}[H]
 	\centering
@@ -117,14 +117,14 @@ $V_{CEQ2}$         & $4,71V$
 		
 	Se utiliza la ganancia de continua como estimador dado que las hojas de datos no especifican un valor para $h_{fe}$. Utilizando los valores de las corrientes de polarización y $h_{fe}$ de cada transistor, se obtienen los siguientes valores:
 	
-	\todo{COMPLETAR TABLA de estimadores}
+
 	\begin{table}[h!]
 		\centering
 		\begin{tabular}{c c c}%
 			\bfseries Estimadores & Q1 & Q2 \\ \hline
-			$\widehat{g}_m$ &  & \\
-			$\widehat{h}_{ie}$ &  & \\
-			$\widehat{r}_{e}$&  & \\
+			$\widehat{g}_m$ & $3,60\cdot 10^{-3}Siemens$  & $80\cdot 10{-3}Siemens$ \\
+			$\widehat{h}_{ie}$ & $13,34k\Omega$ &$1,12k\Omega$ \\
+			$\widehat{r}_{e}$& $277,96\Omega$ &$12,26\Omega$ \\
 			\hline
 		\end{tabular}
 		\caption{Estimadores correspondientes al modelo incremental, para los transistores Q1 y Q2.}
@@ -133,7 +133,7 @@ $V_{CEQ2}$         & $4,71V$
 	
 	\subsection{Circuito incremental}
 	
-	En la Figura \ref{circ_incremental} se muestra el circuito incremental. Las resistencias de salida de cada transistor se desprecian en los cálculos ya que hacerlo no introduce un error considerable y simplifica las operaciones.
+	En la Figura \ref{circ_incremental} se muestra el circuito incremental. Las resistencias de salida $1/h_{oe}$ de cada transistor se desprecian en los cálculos ya que hacerlo no introduce un error considerable y simplifica las operaciones.
 		\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.4]{./Imagenes/circ_incremental.png} \\
@@ -141,7 +141,7 @@ $V_{CEQ2}$         & $4,71V$
 			\label{circ_incremental}
 		\end{figure}
 
-En la Tabla \ref{tabla_valores_incremental} se muestran los valores utilizados y calculados en esta sección, que se utilizan para calcular las ganancias e impedancias del circuito.
+En la Tabla \ref{tabla_valores_incremental} se muestran los valores utilizados en esta sección para luego calcular las ganancias e impedancias del circuito.
 
 \begin{table}[H]
 \centering
@@ -160,7 +160,7 @@ Para poder resolver el circuito fácilmente, se agrupa en paralelo la resistenci
 
 	\begin{equation}
 		\begin{cases}
-		h{fe2}^{*}=h_{fe2}\frac{R_{3}}{R_{3}+h_{ie2}} \\
+		h_{fe2}^{*}=h_{fe2}\frac{R_{3}}{R_{3}+h_{ie2}} \\
 		h_{ie2}^{*}=h_{ie2}//R_{3} \\
 		R_{d}=R_{e}//R_{2}
 		\end{cases}
@@ -173,10 +173,10 @@ Reemplazando por los valores correspondientes se obtienen los siguientes valores
 \centering
 \begin{tabular}{ll}
 \multicolumn{2}{l}{Simplificaciones} \\ \hline
-$h_{fe2}*$          & 80,96           \\
-$R_d$             & 824,56$\Omega$          \\
-$h_{ie2}*$          & 1,00$k\Omega$          
-\end{tabular}
+$h_{fe2}^*$          & 80,96           \\
+$h_{ie2}^*$   & $1,00k\Omega$\\
+$R_d$    & $824,56\Omega$  
+\end{tabular}      
 \end{table}
 
 A partir del circuito y de los cálculos anteriores, se puede ver que las expresiones para las impedancias que se ven a la entrada del primer transistor, del amplificador y del sistema se ven representadas por las ecuaciones que se muestran a continuación, utilizando pasaje a nivel de corriente. 
