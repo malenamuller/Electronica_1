@@ -1,5 +1,13 @@
 
 \section{Análisis teórico del circuito}
+	En la Figura \ref{darlington_tp} se muestra el circuito implementado. La resistencia $R_3$ está para que la corriente de emisor del primer transistor no vaya por completo a la base del segundo transistor, causando que éste sature.
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.4]{./Imagenes/darlington_tp.png} \\
+	\caption{Circuito de estudio en este trabajo, implementando un par Darlington.}
+	\label{darlington_tp}
+\end{figure}
 
 
 
@@ -122,7 +130,7 @@ $V_{CEQ2}$         & $4,71V$
 		\centering
 		\begin{tabular}{c c c}%
 			\bfseries Estimadores & Q1 & Q2 \\ \hline
-			$\widehat{g}_m$ & $3,60\cdot 10^{-3}Siemens$  & $80\cdot 10^{-3}Siemens$ \\
+			$\widehat{g}_m$ & $3,60\cdot 10^{-3}S$  & $80\cdot 10^{-3}S$ \\
 			$\widehat{h}_{ie}$ & $13,34k\Omega$ &$1,12k\Omega$ \\
 			$\widehat{r}_{e}$& $277,96\Omega$ &$12,26\Omega$ \\
 			\hline
@@ -174,7 +182,7 @@ Reemplazando por los valores correspondientes se obtienen los siguientes valores
 \begin{tabular}{ll}
 \multicolumn{2}{l}{Simplificaciones} \\ \hline
 $h_{fe2}^*$          & 80,96           \\
-$h_{ie2}^*$   & $1,00k\Omega$\\
+$h_{ie2}^*$   & $1k\Omega$\\
 $R_d$    & $824,56\Omega$  
 \end{tabular}      
 \end{table}
@@ -197,8 +205,8 @@ De donde reemplanzando por los valores ya calculados se obtienen las impedancias
 \begin{tabular}{ll}
 \multicolumn{2}{l}{\begin{tabular}[c]{@{}l@{}}Impedancias\\   de entrada\end{tabular}} \\ \hline
 $R_i$                                      & 3,31$M\Omega$                                     \\
-$R_{ia}$                                     & 75,00$k\Omega$                                    \\
-$R_{is}$                                    & 85,00$k\Omega$                                   
+$R_{ia}$                                     & 75$k\Omega$                                    \\
+$R_{is}$                                    & 85$k\Omega$                                   
 \end{tabular}
 \end{table}
 
@@ -223,7 +231,7 @@ Finalmente, se llega a los valores de las ganancias de tensión del amplificador
 
 \begin{table}[H]
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{ll}	
 \multicolumn{2}{l}{\begin{tabular}[c]{@{}l@{}}Ganancias\\   de tension\end{tabular}} \\ \hline
 $Av$                                       & 0,981                                     \\
 $Avs$                                      & 0,866                                    
@@ -275,8 +283,8 @@ Reemplazando por los valores de las variables involucradas en la ecuación, se o
 \centering
 \begin{tabular}{ll}
 \multicolumn{2}{l}{Impedancias de salida} \\ \hline
-$r_o$                & 15346,62              \\
-$r_{oa}$              & 3598,07               \\
-$r_{os}$               & 782,52               
+$r_o$                &   17,9          \\
+$r_{oa}$              &  17,83      \\
+$r_{os}$               &  17,52              
 \end{tabular}
 \end{table}
