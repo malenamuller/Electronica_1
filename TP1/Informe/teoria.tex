@@ -1,12 +1,21 @@
 
 \section{Análisis teórico del circuito}
-	En la Figura \ref{darlington_tp} se muestra el circuito implementado. La resistencia $R_3$ está para que la corriente de emisor del primer transistor no vaya por completo a la base del segundo transistor, causando que éste sature.
+	En la Figura \ref{darlington_tp} se muestra el circuito implementado. 
 
 \begin{figure}[H]
 	\centering
 		\includegraphics[scale=0.4]{./Imagenes/darlington_tp.png} \\
 	\caption{Circuito de estudio en este trabajo, implementando un par Darlington.}
 	\label{darlington_tp}
+\end{figure}
+
+La resistencia $R_3$ est\'a para que la corriente de emisor del primer transistor no vaya por completo a la base del segundo transistor, para evitar obtener $h_{fe}$ muy distintos para cada transistor, como se explica a continuaci\'on. La corriente del emisor del primer transistor es pr\'acticamente igual a la de su colector, por lo que es $h_{fe1}$ veces mayor a su corriente de base. Si no se coloca $R_3$, la corriente de base del segundo transistor es igual a la corriente de emisor del primero, por lo que al ser $I_{b2} >> I_{b1}$, se obtiene $I_{C2}>>I_{C1}$. Observando el gr\'afico \ref{icbeta} obtenido de la hoja de datos del transistor usado, se puede ver que el $h_{fe}$ cambia considerablemente al variar $I_C$. Por lo tanto, tendr\'iamos dos transistores con $h_{fe}$ distintos. Por otro lado, si $I_{C2} >> I_{C1}$, se podr\'ia llegar a obtener un valor de $I_{C2}$ mayor a 300mA, d\'onde el $h_{fe}$ disminuye por lo que se ve en el gr\'afico) y por lo tanto la ganancia tambi\'en. Por lo tanto, $R_3$ permite que parte de la corriente del emisor del primer transistor vaya por ah\'i hacia el emisor del segundo transistor, disminuyendo la corriente de base del segundo transistor, reduciendo los problemas mencionados.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{./Imagenes/hfe.png} \\
+	\caption{Gr\'afico de $h_{fe}$ en funci\'on de $I_C$, del transistor BC337-40.}
+	\label{icbeta}
 \end{figure}
 
 
@@ -43,8 +52,8 @@ El equivalente de Th\'evenin entre la base del primer transistor y masa se obtie
 
 	\begin{equation}
 		\begin{cases}
-		&V_{TH} = \frac{R_2}{R_1 + R_2} V_{CC}\\ \\
-		&R_{TH} = R_1 // R_2 
+		&V_{TH} = \frac{R_2}{R_1 + R_2} V_{CC} \approx  11,5V\\ \\
+		&R_{TH} = R_1 // R_2 \approx 76,7k\Omega
 		\end{cases}
 		\label{Thevenin}
 	\end{equation}
@@ -70,8 +79,8 @@ Resolviendo dichas ecuaciones se llega a las siguientes expresiones para las cor
 
 	\begin{equation}
 		\begin{cases}
-		I_{cq_{1}}=\frac{V_{th}-V_{BEon_{1}}-V_{BEon_{2}}\left(1-\frac{R_{e}\beta_{2}}{R_{3}}\right)}{\frac{R_{th}}{\beta_{1}}+R_{e}\beta_{2}}\\ \\
-		I_{cq_{2}}=V_{th}\frac{1}{\frac{R_{th}}{\beta_{1}\beta_{2}}+R_{e}\frac{\beta_{2}+1}{\beta_{2}}}-V_{BEon_{1}}\frac{1}{\frac{R_{th}}{\beta_{2}}+R_{e}\beta_{1}}-V_{BEon_{2}}\left(\frac{\beta_{2}}{R_{3}}+\frac{\left(1-\frac{R_{e}\beta_{2}}{R_{3}}\right)\cdot(\beta_{1}+1)}{\frac{R_{th}}{\beta_{2}}+R_{e}\beta_{1}} \right)
+		I_{cq_{1}}=\frac{V_{th}-V_{BEon_{1}}-V_{BEon_{2}}\left(1-\frac{R_{e}\beta_{2}}{R_{3}}\right)}{\frac{R_{th}}{\beta_{1}}+R_{e}\beta_{2}} = 93,54\mu A\\ \\
+		I_{cq_{2}}=V_{th}\frac{1}{\frac{R_{th}}{\beta_{1}\beta_{2}}+R_{e}\frac{\beta_{2}+1}{\beta_{2}}}-V_{BEon_{1}}\frac{1}{\frac{R_{th}}{\beta_{2}}+R_{e}\beta_{1}}-V_{BEon_{2}}\left(\frac{\beta_{2}}{R_{3}}+\frac{\left(1-\frac{R_{e}\beta_{2}}{R_{3}}\right)\cdot(\beta_{1}+1)}{\frac{R_{th}}{\beta_{2}}+R_{e}\beta_{1}} \right) = 2,12mA
 		\end{cases}
 	\end{equation}
 
@@ -79,17 +88,17 @@ Por último, se puede verificar que ambos transistores queden correctamente pola
 
 	\begin{equation}
 		\begin{cases}
-		V_{CEQ_{1}}=V_{CC}-V_{BEon_{2}}\left(1+\frac{R_{e}}{R_{3}}\right)-R_{e}I_{CQ_{2}}\\ \\
-		V_{CEQ_{2}}=V_{CC}-V_{BEon_{2}}\frac{R_{e}}{R_{3}}-R_{e}I_{CQ_{2}}
+		V_{CEQ_{1}}=V_{CC}-V_{BEon_{2}}\left(1+\frac{R_{e}}{R_{3}}\right)-R_{e}I_{CQ_{2}} = 4,01V\\ \\
+		V_{CEQ_{2}}=V_{CC}-V_{BEon_{2}}\frac{R_{e}}{R_{3}}-R_{e}I_{CQ_{2}} = 4,71V
 		\end{cases}
 	\end{equation}
 	
 
-Para los cálculos se utiliza $V_{BEon}=0.7(V)$ para ambos transistores. Con respecto a los $H_{FE}$, éstos dependen de las $I_{CQ}$ según la \href{https://pdf1.alldatasheet.com/datasheet-pdf/view/171970/ONSEMI/BC337-40.html}{hoja de datos del fabricante}, con lo que son distintos para cada transistor. Tomando inicialmente el $H_{FE}$ mínimo de la hoja de datos, e iterando para los valores de $I_{CQ}$ obtenidos, se llega a que:
+Para los cálculos se utiliza $V_{BEon}=0.7(V)$ para ambos transistores. Con respecto a los $H_{FE}$, éstos dependen de las $I_{CQ}$ según la \href{https://pdf1.alldatasheet.com/datasheet-pdf/view/171970/ONSEMI/BC337-40.html}{hoja de datos del fabricante}, con lo que son distintos para cada transistor. Tomando inicialmente el $h_{fe}$ mínimo de la hoja de datos, e iterando para los valores de $I_{CQ}$ obtenidos, se llega a que:
 	\begin{equation*}
 		\begin{cases}
-		 H_{FE1} = 47\\
-		 H_{FE2} = 90
+		 h_{fe1} = 47\\
+		 h_{fe2} = 90
 		\end{cases}
 	\end{equation*}
 Reemplazando además por los valores de los componentes utilizados, se hallan los valores de $I_{CQ1}$, $I_{CQ2}$, $V_{CEQ1}$ y $V_{CEQ2}$, detallados en la Tabla \ref{tabla_valores_polarizacion}.
@@ -130,7 +139,7 @@ $V_{CEQ2}$         & $4,71V$
 		\centering
 		\begin{tabular}{c c c}%
 			\bfseries Estimadores & Q1 & Q2 \\ \hline
-			$\widehat{g}_m$ & $3,60\cdot 10^{-3}S$  & $80\cdot 10^{-3}S$ \\
+			$\widehat{g}_m$ & $3,60 \frac{mA}{V}$  & $80\frac{mA}{V}$ \\
 			$\widehat{h}_{ie}$ & $13,34k\Omega$ &$1,12k\Omega$ \\
 			$\widehat{r}_{e}$& $277,96\Omega$ &$12,26\Omega$ \\
 			\hline
@@ -233,8 +242,8 @@ Finalmente, se llega a los valores de las ganancias de tensión del amplificador
 \centering
 \begin{tabular}{ll}	
 \multicolumn{2}{l}{\begin{tabular}[c]{@{}l@{}}Ganancias\\   de tension\end{tabular}} \\ \hline
-$Av$                                       & 0,981                                     \\
-$Avs$                                      & 0,866                                    
+$\Delta_{V}$                                       & 0,981                                     \\
+$\Delta_{VS}$                                      & 0,866                                    
 \end{tabular}
 \end{table}
 
@@ -258,9 +267,9 @@ Donde $\Delta_{i}$ es la ganancia de corriente, $\Delta_{is}$ es la ganancia de 
 \centering
 \begin{tabular}{ll}
 \multicolumn{2}{l}{\begin{tabular}[c]{@{}l@{}}Ganancias\\   de corriente\end{tabular}} \\ \hline
-$Ai$                                       & 3934,08                                     \\
-$Ais$                                      & 89,27                                       \\
-$Ais'$                                     & 73,61                                      
+$\Delta_I$                                       & 3934,08                                     \\
+$\Delta_{IS}$                                      & 89,27                                       \\
+$\Delta_{is}'$                                     & 73,61                                      
 \end{tabular}
 \end{table}
 
@@ -283,8 +292,8 @@ Reemplazando por los valores de las variables involucradas en la ecuación, se o
 \centering
 \begin{tabular}{ll}
 \multicolumn{2}{l}{Impedancias de salida} \\ \hline
-$r_o$                &   17,9          \\
-$r_{oa}$              &  17,83      \\
-$r_{os}$               &  17,52              
+$r_o$                &   $17,9\Omega$        \\
+$r_{oa}$              &  $17,83\Omega$      \\
+$r_{os}$               &  $17,52\Omega$              
 \end{tabular}
 \end{table}
