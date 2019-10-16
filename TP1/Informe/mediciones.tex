@@ -40,12 +40,12 @@ En primer lugar, se midió la ganancia de tensión del sistema. En la Figura \re
 		\label{fig_bode_avs}
 	\end{figure}
 
-Luego se midió la ganancia de corriente del sistema. En la Figura \ref{fig_bode_ais} se puede observar la comparación entre teoría, simulación y práctica. En éste caso, es menor el intervalo de frecuencias en las que es válida la estimación teórica, y se presenta una diferencia entre simulación y medición en el punto en el que empieza a caer la ganancia. Éste efecto puede ser atribuible a las capacidades introducidas por el protobard. A $1kHz$, la ganancia en la banda pasante simulada es de 37.541 dB, 75.34 veces, la medida de 37.587 dB, 75.74 veces, mientras que la teórica es de 74 veces, con lo que el modelo nuevamente se verifica. 
+Luego se midió la ganancia de corriente del sistema. En la Figura \ref{fig_bode_ais} se puede observar la comparación entre simulación y práctica. En éste caso, se presenta una diferencia entre simulación y medición en el punto en el que empieza a caer la ganancia. Éste efecto puede ser atribuible a las capacidades introducidas por el protobard. A $1kHz$, la ganancia en la banda pasante simulada es de 37.541 dB, 75.34 veces mientras que la medida de 37.587 dB, 75.74 veces con lo que el modelo nuevamente se verifica. 
 
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.3]{./Imagenes/bode_Ais.png} \\
-		\caption{Ganancia de corriente del sistema teórica, simulada y medida}
+		\includegraphics[scale=0.65]{./Imagenes/bode_Ais.png} \\
+		\caption{Ganancia de corriente del sistema simulada y medida}
 		\label{fig_bode_ais}
 	\end{figure}
 
@@ -80,7 +80,7 @@ En la Tabla \label{valores_frec_media} se muestran los valores teóricos, simula
 		\hline
 		Parámetro   	   & Teórico & Simulado & Medido \\ \hline
 		$\Delta _{VS} (veces)$ 	   & 0,87    & 0,87     & 0,86   \\% \hline
-		$\Delta_{IS} (veces)$	   & 74      & 75,74    & 75,34  \\ %\hline
+		$\Delta_{IS} (veces)$	   & -      & 75,74    & 75,34  \\ %\hline
 		Zis ($k\Omega$)  & 85      & 86,66    & 85     \\ %\hline
 		Zos  ($\Omega$) & 17,52   & 35,89    & 32,97  \\ \hline
 		\end{tabular}
